@@ -34,7 +34,7 @@ bool board_complete(std::array<char, 9> board)
 
 void play_game(int choix)
 {
-    std::array<char, 9> board = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    std::array<char, 9> board{'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     Player player2;
     Player player1;
 
@@ -42,6 +42,13 @@ void play_game(int choix)
     {
         player1 = create_player1();
         player2 = create_player2();
+        while (player1.symbol == player2.symbol)
+        {
+            std::cout << "Symbole deja choisi par " << player1.name << ". Choisissez un autre symbole : ";
+            std::cin.clear();
+            std::cin.ignore(255, '\n');
+            std::cin >> player2.symbol;
+        }
     }
     if (choix == 2)
     {
@@ -75,7 +82,7 @@ void play_game(int choix)
     while (!game_over)
     {
         Player current_player = (turn % 2 == 0) ? player1 : player2;
-        int move {};
+        int move{};
         std::cout << std::endl;
         draw_game_board(board);
         std::cout << std::endl;
@@ -90,9 +97,7 @@ void play_game(int choix)
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
             std::srand(std::time(nullptr));
             while (board[move] == player1.symbol || board[move] == player2.symbol)
-            {
                 move = std::rand() % 9;
-            }
             board[move] = current_player.symbol;
         }
 
@@ -106,7 +111,6 @@ void play_game(int choix)
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
             const std::array<std::array<char, 3>, 8> win_patterns = {std::array<char, 3>{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
-
             bool played = false;
 
             for (const std::array<char, 3> &pattern : win_patterns)
@@ -137,9 +141,7 @@ void play_game(int choix)
             {
                 std::srand(std::time(nullptr));
                 while (board[move] == player1.symbol || board[move] == player2.symbol)
-                {
                     move = std::rand() % 9;
-                }
                 board[move] = current_player.symbol;
             }
         }

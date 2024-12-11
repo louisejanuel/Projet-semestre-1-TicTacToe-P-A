@@ -29,13 +29,3 @@ add_executable(projet ${SRC_FILES})
 
 # le dossier contenant les fichiers d'en-tête pour notre executable helloImac
 target_include_directories(projet PUBLIC "src/")
-
-# include(FetchContent)
-# FetchContent_Declare(
-#     terminal_ctrl
-#     GIT_REPOSITORY https://github.com/dsmtE/terminal_ctrl
-#     GIT_TAG "origin/main"
-# )
-
-# FetchContent_MakeAvailable(terminal_ctrl)
-# target_link_libraries(${PROJECT_NAME} PUBLIC terminal_ctrl)
