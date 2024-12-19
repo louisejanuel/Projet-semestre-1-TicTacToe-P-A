@@ -53,7 +53,7 @@ void play_game(int choix)
     if (choix == 2)
     {
         int choix2;
-        std::cout << "Veuillez choisir la complicité de l'IA :" << std::endl;
+        std::cout << "Veuillez choisir la complexite de l'IA :" << std::endl;
         std::cout << "1. Facile" << std::endl;
         std::cout << "2. Avance" << std::endl;
         std::cin >> choix2;

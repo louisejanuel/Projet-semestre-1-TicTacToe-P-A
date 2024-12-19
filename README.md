@@ -24,7 +24,7 @@ J'ai choisi de faire deux améliorations :
 
 ### Amélioration n°1 : IA plus complexe
 
-On utilise cette première amélioration lorsqu'on choisit l'IA avancé après avoir choisi le deuième mode de jeu TicTacToe.
+On utilise cette première amélioration lorsqu'on choisit l'IA avancé après avoir choisi le deuxième mode de jeu de  TicTacToe.
 J'ai codé cette IA de manière à ce qu'elle prenne en compte les symboles déjà placés sur le plateau. Elle contre les coups adverses ou complète ses propres lignes si deux symboles identiques sont déjà alignés. Pour cela, si l'adversaire ou l'IA elle-même a déjà aligné deux symboles, cette dernière va compléter la ligne. Si ce n'est pas le cas, elle va alors sélectionner aléatoirement une case vide pour jouer.
 
 ### Amélioration n°2 : Puissance 4
